@@ -1,0 +1,23 @@
+// You are using Java
+import java.util.*;
+class main{
+    public static void main(String args[]){
+        Scanner sc =new Scanner(System.in);
+        rev(5,0);
+    }
+    
+    static void rev(int r,int c){
+        if(r==0){
+            return  ;
+        }
+        
+        if(c<r){
+            System.out.print("*");
+            rev(r,c=c+1);
+        }
+        else{
+            System.out.print("\n");
+            rev(r-1,c=0);
+        }
+    }
+}
