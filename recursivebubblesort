@@ -1,0 +1,30 @@
+// You are using Java
+import java.util.*;
+  class main{
+    public static void main(String args[]){
+        int r=5;
+        int c=0;
+        int arr[]={5,3,4,2,1};
+        res(arr,c=0,r);
+        System.out.print(arr);
+    }
+    
+    static void  res(int arr[] ,int c,int r){
+        if(r==0){
+            return ;
+        }
+        if(c<r){
+            if(arr[c]>arr[c+1]){
+                int temp = arr[c];
+                arr[c]=arr[c+1];
+                arr[c+1]=temp;
+            }
+            res( arr,c=c+1,r);
+        }
+        else{
+             res( arr,c=0,r-1);
+        }
+        
+        
+    }
+}
