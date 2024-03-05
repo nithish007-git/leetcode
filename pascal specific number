@@ -1,0 +1,22 @@
+// You are using Java
+import java.util.*;
+class main{
+    public static void main(String args[]){
+        int n =4;
+        int num =2;
+                ncr(n-1,num-1); 
+    }
+    
+    static void ncr(int rows,int col){
+        List <Long> ad1 =new ArrayList<Long>();
+        long res =1;
+        ad1.add(res);
+        for(int i=0;i<col;i++){
+            res =res*(rows-i);
+            res=res/(i+1);
+            ad1.add(res);
+        }
+        System.out.print(res);
+        
+    }
+}
