@@ -1,0 +1,58 @@
+// You are using Java
+import java.util.*;
+class main{
+    public static void main(String args[]){
+        int arr[]={5,4,3,2,1};
+        int arr1[]= mergesort(arr);
+        System.out.print(arr1);
+    }
+    
+    static int[] mergesort(int arr[]){
+        if(arr.length ==1){
+            return arr;
+        }
+        int mid =(arr.length)/2;
+        int left []=mergesort(Arrays.copyOfRange(arr,0,mid));
+        int right []=mergesort(Arrays.copyOfRange(arr,mid,arr.length));
+        
+        return merge(left,right);
+        
+        
+    }
+    
+    static int[] merge(int first[],int last[]){
+        int i=0;
+        int j=0;
+        int k=0;
+        int mix[]=new int[first.length+last.length];
+        
+        while(i<first.length && j<last.length){
+            if(first[i]<last[j]){
+                mix[i]=first[i];
+                i++;
+                k++;
+            }
+            else{
+                mix[j]=last[j];
+                j++;
+                k++;
+            }
+            
+            k++;
+        }
+        
+        while(i<first.length){
+            mix[k]=first[i];
+            i++;
+            k++;
+        }
+        while(j<last.length){
+            mix[k]=last[i];
+            j++;
+            k++;
+        }
+        
+        return mix;
+        
+    }
+}
