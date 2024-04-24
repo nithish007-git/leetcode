@@ -1,0 +1,21 @@
+// You are using Java
+import java.util.*;
+ public class Main{
+    public static void main(String args[]){
+        String str1 ="dapplenigga";
+        System.out.print( skipthestring(str1));
+        
+    }
+    
+    static String  skipthestring(String str1){
+        if(str1.isEmpty()){
+            return " " ;
+        }
+        if(str1.startsWith("apple")){
+           return skipthestring(str1.substring(5));
+        }
+        else{
+              return str1.charAt(0)+skipthestring(str1.substring(1));
+        }
+    }
+}
